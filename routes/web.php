@@ -55,20 +55,16 @@ Route::get('paises', function () {
         "Población" => 33.19
 
     ],
-    "Paraguay" =>[
-        "capital" => "Asunción",
-        "Moneda" => "Guarani",
-        "Población" => 7
+    "Argentina" =>[
+        "capital" => "Buenos Aires",
+        "Moneda" => "Peso Argentino",
+        "Población" => 44.94
 
-    ]];
+]];
 
-    //recorrer el arreglo de paises
-    foreach ($paises as $nombre => $pais){
-        echo "<h1> $nombre </h1>";
-        echo"<pre>";
-        print_r($pais);
-        echo"</pre>";
-        echo"<hr/>";
-    }
+    //mostara la lista pais
+
+    return view ('paises')->with("naciones", $paises);
+
 
 });
