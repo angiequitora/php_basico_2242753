@@ -34,10 +34,10 @@ route::get('arreglos' , function(){
    $estudiantes = ["A" => "Ana" ,
                     2 =>"María" ,
                     "J" => "Jorge" ];
+
    echo "<pre>";
    print_r($estudiantes);
    echo "</pre>";
-
 });
 
 Route::get('paises', function () {
@@ -47,24 +47,25 @@ Route::get('paises', function () {
         "capital" => "Bogotá",
         "Moneda" => "Peso",
         "Población" => 51
-
     ],
+
     "Peru" => [
         "capital" => "Lima",
         "Moneda" => "Sol",
         "Población" => 33.19
-
     ],
+
     "Argentina" =>[
         "capital" => "Buenos Aires",
         "Moneda" => "Peso Argentino",
         "Población" => 44.94
-
 ]];
 
     //mostara la lista pais
 
     return view ('paises')->with("naciones", $paises);
-
-
 });
+
+Route::get('mostrar_formulario' , 'MetabuscadorController@mostrar_formulario');
+
+Route::post('buscar_termino', "MetabuscadorController@buscar_termino");
